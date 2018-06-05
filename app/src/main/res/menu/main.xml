@@ -4,6 +4,5 @@
     tools:context=".MainActivity">
     <item
         android:id="@+id/action_settings"
-        android:title="@string/settings_menu_item"
-         />
+        android:title="@string/settings_menu_item" />
 </menu>

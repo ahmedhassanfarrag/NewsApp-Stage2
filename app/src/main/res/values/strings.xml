@@ -11,7 +11,10 @@
     <!-- for section preferences -->
     <string name="settings_section_label">Section</string>
     <string name="settings_section_key" translatable="false">section</string>
-    <string name="settings_section_default" translatable="false">business</string>
+    <string name="settings_section_default" translatable="false">@string/settings_all_section_category_value</string>
+    <!-- Label for All topic category  option [CHAR LIMIT=20] -->
+    <string name="settings_all_section_category_label">All</string>
+    <string name="settings_all_section_category_value">""</string>
 
     <!-- Label for the business news [CHAR LIMIT=20] -->
     <string name="settings_business_label">business</string>
@@ -42,4 +45,8 @@
     <!-- Label for newest news [CHAR LIMIT=20] -->
     <string name="settings_order_by_newest_label">newest</string>
     <string name="settings_order_by_newest_value" translatable="false">newest</string>
+    <!--String for the Preference Labels-->
+    <string name="settings_section_per_page_label">section page No. (1–50)</string>
+    <string name="settings_section_per_page_key">page_size</string>
+    <string name="settings_section_per_page_default">50</string>
 </resources>

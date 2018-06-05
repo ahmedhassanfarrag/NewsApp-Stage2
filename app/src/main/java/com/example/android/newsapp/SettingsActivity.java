@@ -11,6 +11,7 @@ import android.util.Log;
 
 public class SettingsActivity extends AppCompatActivity {
     private static final String LOG_TAG = MainActivity.class.getName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,8 @@ public class SettingsActivity extends AppCompatActivity {
             Preference orderBy = findPreference(getString(R.string.settings_order_by_key));
             bindPreferenceSummaryToValue(orderBy);
             Log.i(LOG_TAG, "TEST:settings_order_by_key called.");
+            Preference pageSize = findPreference(getString(R.string.settings_section_per_page_key));
+            bindPreferenceSummaryToValue(pageSize);
         }
 
         //we can see the choice on the screen

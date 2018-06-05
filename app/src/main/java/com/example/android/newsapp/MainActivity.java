@@ -109,17 +109,24 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         String orderBy = sharedPrefs.getString(
                 getString(R.string.settings_order_by_key),
                 getString(R.string.settings_order_by_default));
+        //for sectionPageNo
+        String sectionPageNo = sharedPrefs.getString(
+                getString(R.string.settings_section_per_page_key),
+                getString(R.string.settings_section_per_page_default));
         // parse breaks apart the URI string that's passed into its parameter
         Uri baseUri = Uri.parse(guardianapis_REQUEST_URL);
         // buildUpon prepares the baseUri that we just parsed so we can add query parameters to it
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
         uriBuilder.appendQueryParameter("show-tags", "contributor");
-        uriBuilder.appendQueryParameter("section", section);
+        if (!section.equals(getString(R.string.settings_section_default))) {
+            uriBuilder.appendQueryParameter("section", section);
+        }
         uriBuilder.appendQueryParameter("order-by", orderBy);
-        uriBuilder.appendQueryParameter("from-date", "2016-01-01");
+        uriBuilder.appendQueryParameter("from-date", "2010-01-01");
+        //default sectionPageNo is 50 but can choose form(1-50)!!
+        uriBuilder.appendQueryParameter("page-size", sectionPageNo);
         uriBuilder.appendQueryParameter("api-key", API_STUDENT_KEY);
-
         return new NewsLoader(this, uriBuilder.toString());
 
     }
